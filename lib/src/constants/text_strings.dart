@@ -83,7 +83,7 @@
   const String tDashboardBannerTitle03  = "Titulo03";
 //
 // Profile Screen
-  const String tPrfile                  = "Perfil";
+  const String tProfile                  = "Perfil";
   const String tEditProfile             = "Editar Perfil";
   const String tLogoutDialogHeading     = "Logout";
   const String tProfileHeading          = "Henry Medina";
@@ -99,7 +99,7 @@
 // Update Profile Scrin - text
   const String tDelete                  = "Borrar";
   const String tJoined                  = "Unido desde";
-  const String toinedAt                 = "31 de Octubre 2022";
+  const String tJoinedAt                 = "31 de Octubre 2022";
 
 //
 
