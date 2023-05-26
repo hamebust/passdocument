@@ -10,69 +10,63 @@ class SplashScreen extends StatelessWidget {
   SplashScreen({Key? key}) : super(key: key);
 
   final splashController = Get.put(SplashScreenController());
-  
-  @override 
+
+    @override 
   Widget build(BuildContext context) {
     splashController.startAnimation();
-    return Scaffold(
+    var height = MediaQuery.of(context).size.height;
+        return Scaffold(
       body: Stack(
         children: [
-          Obx( () => AnimatedPositioned(
-              duration: const Duration(milliseconds: 1600),
-              top: splashController.animate.value ? 0 : -30,
-              left: splashController.animate.value ? 0 : -30,
-              child: Image(image: AssetImage(tSplashTopIcon)),
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 1600),
+            top: splashController.animate.value ? -30 : 0,
+            left: splashController.animate.value ? -30 : 0,
+            //This child take the image of lib\src\constants\image_strings.dart
+              child: Container(
+              width: tSplashContainerSize,
+              height: tSplashContainerSize,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100),
+                color: tPrimaryColor,               
+              ),              
             ),
-          ),
-
-          Obx( () => AnimatedPositioned(
+          ),          
+          Center(          
+            child: AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
               top: 80,
-              left: splashController.animate.value ? tDefaultSize: -80,
-              
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 2000),
-                opacity: splashController.animate.value ? 1 : 0,
-                 
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  
-                  children: [
-                    Text(tAppName, style: Theme.of(context).textTheme.labelMedium,),
-                    Text(tAppTagLine, style: Theme.of(context).textTheme.labelSmall,),
-                  ],
-                ),
-              )
+              left: splashController.animate.value ? tDefaultSize : 0, 
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(tAppName, style: Theme.of(context).textTheme.headlineMedium,),
+                  Text(tAppTagLine, style: Theme.of(context).textTheme.headlineSmall,),
+                ],
+              ),                       
             ),
           ),
-
-          Obx( () => AnimatedPositioned(
-              duration: const Duration(milliseconds:2400),
-              bottom: splashController.animate.value ? 60 : 0,
-                        
-              child: const AnimatedPositioned(
-                duration: Duration(milliseconds:2000),
-                child: Image(image: AssetImage(tSplashImage)),
+          Center(
+            child: Positioned(
+              bottom: 80,
+              child: Image(image: const AssetImage(tSplashImage), height: height * 0.6),
+            ),
+          ),
+          Positioned(
+            bottom: 40,
+            right: tDefaultSize,
+            child: Container(
+              width: tSplashContainerSize,
+              height: tSplashContainerSize,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100),
+                color: tPrimaryColor,               
               ),
-            ),
+            )
           ),
-          
-          Obx( () => AnimatedPositioned(
-              duration: const Duration(milliseconds:2000),
-              bottom: splashController.animate.value ? 60 : 0,
-              right: tDefaultSize,
-              child: Container(
-                width: tSplashContainerSize,
-                height: tSplashContainerSize,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: tPrimaryColor,
-                ),              
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }  
+        ]
+      ),        
+    );              
+  }
 }
+  
