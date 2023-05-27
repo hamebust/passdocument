@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "617689912858",
+    "project_id": "pass-document",
+    "storage_bucket": "pass-document.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617689912858:android:1629c68318c1f0b978a3a3",
+        "android_client_info": {
+          "package_name": "com.cluster.passdocument"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617689912858-9bvounh848cgm47630fktb25pi6e5mgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4KwxMWijnAPboL7pL-HcEljm1XlKEhvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "617689912858-9bvounh848cgm47630fktb25pi6e5mgh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "617689912858-m90bag35pmkdgdbbqci69mffkbkslv7g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cluster.passdocument"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.passdocument
+package com.cluster.passdocument
 
 import io.flutter.embedding.android.FlutterActivity
 
