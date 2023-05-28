@@ -4,7 +4,7 @@ import 'package:passdocument/src/constants/colors.dart';
 import 'package:passdocument/src/constants/image_strings.dart';
 import 'package:passdocument/src/constants/text_strings.dart';
 import 'package:passdocument/src/features/authentication/screens/login/login_screen.dart';
-import 'package:passdocument/src/features/authentication/screens/singup/singup_screen.dart';
+import 'package:passdocument/src/features/authentication/screens/signup/signup_screen.dart';
 
 class WelcomeSreen extends StatelessWidget{  
   const WelcomeSreen ({Key? key}) : super(key: key);
@@ -39,11 +39,11 @@ class WelcomeSreen extends StatelessWidget{
               ),
               //Space ------------------
               const SizedBox(width: 10),
-              //SINGUP ------------------
+              //SignUP ------------------
               Expanded(
                 child: ElevatedButton(
-                  onPressed: (){Get.to(() => const SingUpScreen());},
-                  child: Text(tSingup.toUpperCase())
+                  onPressed: (){Get.to(() => const SignUpScreen());},
+                  child: Text(tSignup.toUpperCase())
                 ),
               ),
               const SizedBox(width: 10),

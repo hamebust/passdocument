@@ -6,8 +6,8 @@ import 'package:passdocument/src/constants/text_strings.dart';
 import 'package:passdocument/src/features/authentication/screens/login/login_screen.dart';
 
 
-class SingUpWidgetFooter extends StatelessWidget {
-  const SingUpWidgetFooter ({Key? key}) : super(key: key);
+class SignUpFooterWidget extends StatelessWidget {
+  const SignUpFooterWidget ({Key? key}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SingUpWidgetFooter extends StatelessWidget {
               image: AssetImage(tLogoGoogleImage), 
               width: 20.0,),
             onPressed: () {}, 
-            label: const Text(tSingUpWithGoogle),
+            label: const Text(tSignUpWithGoogle),
           ),
         ),
         const SizedBox(height: tFormHeight ,),
@@ -32,7 +32,7 @@ class SingUpWidgetFooter extends StatelessWidget {
           onPressed: () {Get.to(() => const LoginScreen());}, 
           child: Text.rich(
               TextSpan(
-                text: tSingUpAlreadyHaveAnAccount,
+                text: tSignUpAlreadyHaveAnAccount,
                 style: Theme.of(context).textTheme.bodyLarge,
                 children: const [
                   TextSpan(

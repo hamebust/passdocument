@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:passdocument/src/constants/image_strings.dart';
 import 'package:passdocument/src/constants/sizes.dart';
 import 'package:passdocument/src/constants/text_strings.dart';
-import 'package:passdocument/src/features/authentication/screens/singup/singup_screen.dart';
+import 'package:passdocument/src/features/authentication/screens/signup/signup_screen.dart';
 
 class LoginWidgetFooter extends StatelessWidget {
   const LoginWidgetFooter({Key? key}) : super(key: key);
@@ -23,20 +23,20 @@ class LoginWidgetFooter extends StatelessWidget {
                   width: 20.0,
                 ),
                 onPressed: () {},
-                label: const Text(tSingInWithGoogle),
+                label: const Text(tSignInWithGoogle),
               ),
             ),
             const SizedBox(
               height: tFormHeight,
             ),
             TextButton(
-              onPressed: () {Get.to(() => const SingUpScreen());},
+              onPressed: () {Get.to(() => const SignUpScreen());},
               child: Text.rich(TextSpan(
                   text: tDontHaveAnAccount,
                   style: Theme.of(context).textTheme.bodyLarge,
                   children: const [
                     TextSpan(
-                      text: tSingup,
+                      text: tSignup,
                       style: TextStyle(color: Colors.blue),
                       
                     )

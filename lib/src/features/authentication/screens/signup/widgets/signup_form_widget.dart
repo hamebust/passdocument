@@ -3,8 +3,8 @@ import 'package:passdocument/src/constants/sizes.dart';
 import 'package:passdocument/src/constants/text_strings.dart';
 
 
-class SingUpWidgetForm extends StatelessWidget {
-  const SingUpWidgetForm({
+class SignUpFormWidget extends StatelessWidget {
+  const SignUpFormWidget({
     super.key,
   });
 
@@ -68,7 +68,7 @@ class SingUpWidgetForm extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {},
-              child: const Text(tSingup),
+              child: const Text(tSignup),
             ),
           ),
         ],

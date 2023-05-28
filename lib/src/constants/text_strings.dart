@@ -5,11 +5,11 @@
   const String tEmail                   = "Email";
   const String tPhone                   = "Teléfono";
   const String tPhoneNo                 = "Número de Teléfono";
-  const String tSingup                  = "Singup";
+  const String tSignup                  = "Signup";
   const String tPassword                = "Clave";
   const String tOr                      = "O";
   const String tForgetPassword          = "Olvido su Clave ";
-  const String tSingInWithGoogle        = "Ingrese con Google";
+  const String tSignInWithGoogle        = "Ingrese con Google";
   const String tFullName                = "Nombre Completo";
   const String tNext                    = "Siguiente";
   const String tOurMail                 = "support@passdocument";
@@ -50,11 +50,11 @@
   const String tDontHaveAnAccount       = "No tienes una cuenta ";
 //
 
-//Sing Up Screen Text
-  const String tSingUpTitle             = "Unete";
-  const String tSingUpSubTitle          = "Crea una cuenta";
-  const String tSingUpAlreadyHaveAnAccount= "Ya tienes una cuenta "; 
-  const String tSingUpWithGoogle        = "Registrate con Google"; 
+//Sign Up Screen Text
+  const String tSignUpTitle             = "Unete";
+  const String tSignUpSubTitle          = "Crea una cuenta";
+  const String tSignUpAlreadyHaveAnAccount= "Ya tienes una cuenta "; 
+  const String tSignUpWithGoogle        = "Registrate con Google"; 
 //
 
 //Forget Password
