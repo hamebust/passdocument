@@ -1,0 +1,100 @@
+APP DE AUTORIZACIÓN DE INGRESO 
+Esta es una app de envió de solicitudes, para aprobar o denegar la entrada y salida a una instalación física (oficina, local, casa, apartamento)
+
+En esta app de acceso el usuario puede tener uno o varios roles.
+1. Administrador y supervisor
+1.1. Crea y edita grupos llamados “LOCACIONES”, que son las instalaciones físicas primarias con los datos (nombre, ubicación geográfica, teléfono(s)).
+1.2. Agrega usuario(s) administrador al grupo.
+1.3. Agrega, modifica o borra usuario(s) vigilante dentro del grupo.
+1.4. Crea subgrupo(s) llamados “SECTORES”, que son las instalaciones físicas dentro del grupo  “LOCACIONES” con los datos (Empresa o Número de Torre, oficina o local, casa o apartamento).
+1.5. Agrega al menos un usuario(s) administrador al subgrupo obligatoriamente.
+1.6. Agrega, modifica o borra usuario(s) vigilante dentro del grupo (opcional).
+1.7. Crea subgrupo(s), llamados “ÁREAS” que son las instalaciones físicas dentro del grupo- “SECTORES” (Empresa, Número de Torre, oficina, local, casa o apartamento).
+1.8. Agrega al menos un usuario(s) habitante al subgrupo obligatoriamente.
+
+2. Habitante: dueño, inquilino o trabajador del inmueble
+2.1. crea y edita subgrupo(s) con los datos de la  instalación física secundaria, nombre, ubicación, teléfono(s)
+2.2. envía una notificación de ingreso de visita al subgrupo correspondiente
+2.3. agrega otros habitantes al subgrupo
+3. Vigilante: valida el ingreso y salida del usuario en rol de visitante
+	3.1. Recibe las notificaciones de ingreso de visita y las aprueba o deniega según el subgrupo al que van dirigidas.
+
+4. Visitante; usuario temporal que ingresa y sale de la instalación
+
+La  app funciona de la siguiente manera:
+
+Una parte es similar a un chat de conversación donde:
+
+1. Autenticación de usuarios:
+El primer paso es autenticar a los usuarios para asegurarse de que solo usuarios autorizados puedan acceder a la app
+1.1. primera instancia con su correo electrónico y/o celular y
+1.2. segunda instancia con documentos personales (pasaporte, licencia, c.i.)
+1.3. en tercera instancia autenticar con proveedores Google, Microsoft, Facebook, etc
+
+2. Contactos
+2.1. El usuario solicitante ingresa correo electrónico o teléfono del usuario receptor
+2.2. El usuario solicitante envía notificación de solicitud de contacto
+ 2.3 El usuario receptor abre y aprueba/deniega la solicitud de contacto
+	2.3.1. Al usuario receptor aprobar se habilitan las funciones de acceso a instalaciones
+	2.3.1 Al usuario receptor denegar se mantienen bloqueadas las notificaciones de acceso
+.
+3. Creación de Grupo(s) por parte del usuario
+Al crear el grupo automáticamente se convierte en administrador y elegir administradores
+3.1. crea un grupo-locación
+(Centro Comercial, Conjunto Residencial; Ejemplo: Conjunto Residencial El Remanso)
+3.2. crea un subgrupo-locación
+(Oficina, Local, Casa, Apartamento; Ejemplo: Apartamento 545)  
+	3.2.1 Anexar usuario al subgrupo
+(obligatorio dentro de subgrupo)
+3.3. Selección de los vigilantes (obligatorio)
+ 
+Una parte de gestión de la seguridad de acceso 
+
+4. Solicitud de ingreso del usuario visitante (opcional)
+El usuario visitante puede enviar mensaje para solicitar acceso a la instalación
+4.1. El usuario busca entre su lista de contactos.
+4.2. Envía mensaje a usuario
+	4.2. Motivo de la visita
+5. Creación de autorización de ingreso:
+Una vez que un usuario ha iniciado sesión,  el usuario en rol de habitante puede crear una nueva autorización de ingreso de otro usuario.
+5.1. El usuario habitante busca entre su lista de contactos al usuario visitante
+5.2. El sistema crea código automático
+5.3. El usuario habitante elige el tiempo
+	5.3.1. Lapso de tiempo
+	5.3.2. Horario
+	5.3.3. Permanente
+5.4.  el tipo de visita de la lista o describe la visita
+	5.4.1. Familiar y amistades
+	5.4.2. Trabajadores
+5.4.3. Otro (describir en 20 caracteres ) 
+
+6. Envío de la autorización:
+El usuario envía la autorización al servidor, que lo almacena en la base de datos y lo envía a los usuarios involucrados.
+6.1. El usuario habitante envía un notificación de acceso a los usuario involucrados
+6.1.1. Usuario Visitante
+6.1.2. Usuario Vigilante (no posee el código)
+
+7. Recepción de la notificación autorización:
+Cuando los usuarios reciben la notificación, el servidor lo envía al cliente a través de una conexión en tiempo real. Los usuarios actualizan su interfaz de usuario para mostrar la nueva autorización.
+	7.1. El usuario vigilante está preparado para recibir el código
+	7.2. El usuario visitante ya posee el código
+
+8. Aprobado/Denegado de notificación-autorización:
+Cuando el usuario visitante entrega código al vigilante, se marca como leído en la base de datos. solo tiene tres intentos.
+8.1. El usuario visitante entrega el código al usuario vigilante para validación
+8.2. El usuario vigilante ingresa el código en la app
+8.3. La app valida el código y aprueba o deniega entrada
+	8.3.1. Si el código es errado, mostrar mensaje de error al vigilante 
+	8.3.2.Si el código es valido pero fuera del periodo de vigencia,  mostrar mensaje de error al vigilante
+	8.3.3. Permitir reintentos de ingreso de código hasta 3 veces, luego bloquear
+	8.3.4. Enviar notificación al habitante que autorizó el ingreso una vez que haya sido verificado por el vigilante.
+
+9. Búsqueda de notificaciones:
+Para buscar una autorización específica, se puede usar la búsqueda por palabra clave o la búsqueda por ID de conversación. Esto garantiza que el usuario pueda encontrar fácilmente una conversación específica.
+
+10. Eliminación de notificaciones:
+Los usuarios pueden eliminar notificaciones viejas. Esto implica eliminar los registros correspondientes de la base de datos.
+
+11. Actualización de la interfaz de usuario:
+La interfaz de usuario debe actualizarse en tiempo real para mostrar las notificaciones nuevas y cambios en el estado de los accesos.
+

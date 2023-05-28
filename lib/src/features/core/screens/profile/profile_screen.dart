@@ -7,6 +7,7 @@ import 'package:passdocument/src/constants/sizes.dart';
 import 'package:passdocument/src/constants/text_strings.dart';
 import 'package:passdocument/src/features/core/screens/profile/profile_update_Screen.dart';
 import 'package:passdocument/src/features/core/screens/profile/widget/Profile_menu/profile_menu.dart';
+import 'package:passdocument/src/repository/authentication_repository/authentication_repository.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -73,7 +74,7 @@ class ProfileScreen extends StatelessWidget {
               const Divider(color: Colors.grey,),
               const SizedBox(height: 10,),
               ProfileMenuWidget(title:"Information"     ,icon: LineAwesomeIcons.info                ,           onPress: (){},),
-              ProfileMenuWidget(title:"Logout"          ,icon: LineAwesomeIcons.alternate_sign_out  ,           onPress: (){},  textColor: Colors.red, endIcon: false, ),
+              ProfileMenuWidget(title:"Logout"          ,icon: LineAwesomeIcons.alternate_sign_out  ,           onPress: (){AuthenticationRepository.instance.logout();},  textColor: Colors.red, endIcon: false, ),
 
             ],
           ),

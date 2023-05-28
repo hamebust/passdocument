@@ -6,8 +6,8 @@ import 'package:passdocument/src/constants/text_strings.dart';
 import 'package:passdocument/src/features/authentication/screens/login/login_screen.dart';
 import 'package:passdocument/src/features/authentication/screens/signup/signup_screen.dart';
 
-class WelcomeSreen extends StatelessWidget{  
-  const WelcomeSreen ({Key? key}) : super(key: key);
+class WelcomeScreen extends StatelessWidget{  
+  const WelcomeScreen ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
