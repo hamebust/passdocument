@@ -33,6 +33,7 @@ dependencies:
   line_awesome_flutter: ^2.0.0
   firebase_core: ^2.13.0
   firebase_auth: ^4.6.1
+  firebase_phone_auth_handler: ^1.0.8
 
 dev_dependencies:
   flutter_test:
